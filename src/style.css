@@ -1,0 +1,399 @@
+body,
+h1 {
+  margin: 0px;
+}
+
+body {
+  background: hsl(222, 26%, 31%);
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
+
+button {
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: hsl(32, 26%, 89%);
+  font: inherit;
+  text-align: inherit;
+  color: none;
+  line-height: inherit;
+  cursor: pointer;
+  outline: none; /* Remove a borda de foco, para adicionar estilo de foco manualmente */
+  -webkit-appearance: none; /* Remove o estilo padrão do botão no Chrome/Safari */
+  -moz-appearance: none; /* Remove o estilo padrão do botão no Firefox */
+  appearance: none; /* Remove o estilo padrão do botão em navegadores modernos */
+}
+
+body,
+html {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+.main-conteiner {
+  display: grid;
+  grid-template-columns: 250px;
+  gap: 20px;
+  height: max-content;
+  width: max-content;
+}
+
+.header {
+  font-size: 8px;
+  color: white;
+  background: hsl(222, 26%, 31%);
+  display: flex;
+  align-items: center;
+  height: max-content;
+  justify-content: space-between;
+}
+
+.result {
+  height: 30px;
+  background: hsl(224, 36%, 15%);
+  text-align: right;
+  font-size: 36px;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.keyboard {
+  display: grid;
+  padding: 10px;
+  background: hsl(223, 31%, 20%);
+  grid-template-columns: 50px 50px 50px 50px;
+  gap: 10px;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.keyboard button {
+  height: 30px;
+  border-radius: 4px;
+  text-align: center;
+  color: hsl(223, 31%, 20%);
+}
+
+.reset {
+  grid-column: 1/3;
+  background: hsl(224, 51%, 76%);
+  color: white;
+}
+
+.equals {
+  grid-column: 3/-1;
+  background: hsl(6, 93%, 67%);
+  color: white;
+}
+
+.del {
+  background: hsl(224, 51%, 76%);
+  color: white;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 35px;
+  height: 12px;
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch::before {
+  content: "THEME";
+  color: white;
+  font-size: 6px;
+  position: absolute;
+  left: -40px;
+}
+
+.switch-labels {
+  position: absolute;
+  left: -8px;
+  top: -10px;
+  font-size: 6px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  color: white;
+  padding: 0 10px;
+}
+
+.switch-handle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #ff4f4f;
+  border-radius: 50%;
+  left: 2px;
+  transition: left 0.3s;
+}
+
+.state-1 .switch-handle {
+  left: 2px;
+}
+
+.state-2 .switch-handle {
+  left: 13px;
+}
+
+.state-3 .switch-handle {
+  left: 26px;
+}
+
+body.state-1 {
+  background: hsl(222, 26%, 31%);
+  transition: 0.9s;
+}
+
+body.state-2 {
+  background: hsl(0, 0%, 90%);
+  transition: 0.9s;
+}
+
+body.state-3 {
+  background: hsl(268, 75%, 9%);
+  transition: 0.9s;
+}
+
+.state-1 .header {
+  background: hsl(222, 26%, 31%);
+  color: white;
+  transition: 0.9s;
+}
+
+.state-2 .header {
+  background: hsl(0, 0%, 90%);
+  color: hsl(60, 5%, 32%);
+  transition: 0.9s;
+}
+
+.state-3 .header {
+  background: hsl(268, 75%, 9%);
+  color: hsl(49, 57%, 57%);
+  transition: 0.9s;
+}
+
+.state-1 .toggle-switch {
+  background: hsl(223, 31%, 20%);
+  color: white;
+  transition: 0.9s;
+}
+
+.state-1 .toggle-switch::before {
+  color: white;
+}
+
+.state-1 .switch-labels {
+  color: white;
+  transition: 0.9s;
+}
+
+.state-1 .switch-handle {
+  background: #ff4f4f;
+  transition: 0.9s;
+}
+
+.state-2 .toggle-switch {
+  background: hsl(353, 10%, 82%);
+  color: hsl(60, 7%, 22%);
+  transition: 0.9s;
+}
+
+.state-2 .toggle-switch::before {
+  color: hsl(60, 7%, 22%);
+}
+
+.state-2 .switch-labels {
+  color: hsl(60, 7%, 22%);
+}
+
+.state-2 .switch-handle {
+  background: hsl(26, 95%, 60%);
+}
+
+.state-3 .toggle-switch {
+  background: hsl(269, 74%, 12%);
+  color: hsl(49, 57%, 57%);
+}
+
+.state-3 .toggle-switch::before {
+  color: hsl(49, 57%, 57%);
+}
+
+.state-3 .switch-labels {
+  color: hsl(49, 57%, 57%);
+}
+
+.state-3 .switch-handle {
+  background: hsl(176, 96%, 78%);
+}
+
+.state-1 .result {
+  color: white;
+  background: hsl(224, 36%, 15%);
+}
+
+.state-1 .keyboard button:hover {
+  background: hsl(0, 0%, 100%);
+  transition: 0.4s;
+}
+
+.state-1 .keyboard .reset:hover {
+  background: hsl(224, 51%, 76%);
+  transition: 0.4s;
+}
+
+.state-1 .keyboard .equals:hover {
+  background: hsl(6, 93%, 67%);
+  transition: 0.4s;
+}
+
+.state-1 .keyboard .del:hover {
+  background: hsl(224, 51%, 76%);
+  transition: 0.4s;
+}
+
+.state-2 .keyboard button:hover {
+  background: hsl(0, 0%, 100%);
+  transition: 0.4s;
+}
+
+.state-2 .keyboard .reset:hover {
+  background: hsl(185, 41%, 56%);
+  transition: 0.4s;
+}
+
+.state-2 .keyboard .equals:hover {
+  background: hsl(6, 93%, 67%);
+  transition: 0.4s;
+}
+
+.state-2 .keyboard .del:hover {
+  background: hsl(185, 41%, 56%);
+  transition: 0.4s;
+}
+
+.state-3 .keyboard button:hover {
+  background: hsl(267, 54%, 44%);
+  transition: 0.4s;
+}
+
+.state-3 .keyboard .reset:hover {
+  background: hsl(280, 56%, 44%);
+  transition: 0.4s;
+}
+
+.state-3 .keyboard .equals:hover {
+  background: hsl(177, 100%, 79%);
+  transition: 0.4s;
+}
+
+.state-3 .keyboard .del:hover {
+  background: hsl(280, 56%, 44%);
+  transition: 0.4s;
+}
+
+.state-2 .result {
+  color: hsl(60, 11%, 20%);
+  background: hsl(0, 0%, 93%);
+}
+
+.state-3 .result {
+  color: hsl(53, 80%, 62%);
+  background: hsl(269, 74%, 12%);
+}
+
+.state-1 .keyboard {
+  background: hsl(223, 31%, 20%);
+}
+
+.state-1 .keyboard button {
+  color: hsl(223, 31%, 20%);
+  background: hsl(32, 26%, 89%);
+  border-bottom: 2px solid #b5a49a;
+}
+
+.state-1 .keyboard button.del {
+  background: hsl(224, 21%, 50%);
+  color: white;
+  border-bottom: 2px solid hsl(224, 27%, 35%);
+}
+
+.state-1 .keyboard button.reset {
+  background: hsl(224, 21%, 50%);
+  color: white;
+  border-bottom: 2px solid hsl(224, 27%, 35%);
+}
+
+.state-1 .keyboard button.equals {
+  background: hsl(6, 64%, 51%);
+  color: white;
+  border-bottom: 2px solid hsl(5, 70%, 34%);
+}
+
+.state-2 .keyboard {
+  background: hsl(0, 6%, 82%);
+}
+
+.state-2 .keyboard button {
+  color: hsl(50, 6%, 20%);
+  background: hsl(48, 9%, 89%);
+  border-bottom: 2px solid hsl(31, 11%, 61%);
+}
+
+.state-2 .keyboard button.del {
+  background: hsl(185, 41%, 38%);
+  color: white;
+  border-bottom: 2px solid hsl(189, 44%, 27%);
+}
+
+.state-2 .keyboard button.reset {
+  background: hsl(185, 41%, 38%);
+  color: white;
+  border-bottom: 2px solid hsl(189, 44%, 27%);
+}
+
+.state-2 .keyboard button.equals {
+  background: hsl(25, 99%, 40%);
+  color: white;
+  border-bottom: 2px solid hsl(25, 98%, 27%);
+}
+
+.state-3 .keyboard {
+  background: hsl(269, 74%, 12%);
+}
+
+.state-3 .keyboard button {
+  color: hsl(52, 84%, 65%);
+  background: hsl(269, 48%, 20%);
+  border-bottom: 2px solid hsl(289, 73%, 36%);
+  cursor: pointer;
+}
+
+.state-3 .keyboard button.del {
+  background: hsl(281, 89%, 26%);
+  color: white;
+  border-bottom: 2px solid hsl(285, 91%, 52%);
+}
+
+.state-3 .keyboard button.reset {
+  background: hsl(281, 89%, 26%);
+  color: white;
+  border-bottom: 2px solid hsl(285, 91%, 52%);
+}
+
+.state-3 .keyboard button.equals {
+  color: hsl(186, 34%, 28%);
+  background: hsl(176, 100%, 44%);
+  border-bottom: 2px solid hsl(189, 41%, 56%);
+}
